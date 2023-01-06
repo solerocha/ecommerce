@@ -1,12 +1,17 @@
 package com.spring.ecommerce.models;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 import lombok.Data;
 
 @Data
+@Entity
+@Table(name = "products")
 public class Product {
 
     @Id
@@ -19,6 +24,9 @@ public class Product {
     private double price;
     private int quantity;
 
+    @ManyToOne
+    private User user;
+
     public Product() {
 
     }
@@ -30,5 +38,16 @@ public class Product {
         this.price = price;
         this.quantity = quantity;
     }
+
+    public Product(String nameProd, String description, String imageUrl, double price, int quantity, User user) {
+        this.nameProd = nameProd;
+        this.description = description;
+        this.imageUrl = imageUrl;
+        this.price = price;
+        this.quantity = quantity;
+        this.user = user;
+    }
+
+    
 
 }
