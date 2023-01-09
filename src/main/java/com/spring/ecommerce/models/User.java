@@ -13,7 +13,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name="users")
+@Table(name = "users")
 public class User {
 
     @Id
@@ -28,13 +28,26 @@ public class User {
     private String type;
     private String password;
 
-    @OneToMany(mappedBy="user")
+    @OneToMany(mappedBy = "user")
     private List<Product> products;
 
-    @OneToMany(mappedBy="user")
+    @OneToMany(mappedBy = "user")
     private List<Order> orders;
 
     public User() {
+
+    }
+
+    public User(Long i, String name, String username, String email, String address, String phone, String type,
+            String password) {
+        this.id = i;
+        this.name = name;
+        this.username = username;
+        this.email = email;
+        this.address = address;
+        this.phone = phone;
+        this.type = type; // {CLIENTE, ADMIN}
+        this.password = password;
 
     }
 
