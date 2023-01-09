@@ -1,5 +1,6 @@
 package com.spring.ecommerce.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,11 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void delete(Long id) {
         prodRepo.deleteById(id);
+    }
+
+    @Override
+    public List<Product> findAll(){
+        return prodRepo.findAll();
     }
 
 }

@@ -1,5 +1,6 @@
 package com.spring.ecommerce.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import com.spring.ecommerce.models.Product;
@@ -13,5 +14,7 @@ public interface ProductService {
     public void update(Product prod);
 
     public void delete(Long id);
+
+    public List<Product> findAll();
 
 }
