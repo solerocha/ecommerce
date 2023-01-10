@@ -48,6 +48,12 @@ public class Product {
         this.user = user;
     }
 
+    @Override
+    public String toString() {
+        return "Product [id=" + id + ", nameProd=" + nameProd + ", description=" + description + ", imageUrl="
+                + imageUrl + ", price=" + price + ", quantity=" + quantity + ", user=" + user + "]";
+    }
+
     
 
 }
