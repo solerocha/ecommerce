@@ -39,6 +39,7 @@
     </ol>
 
     <a class="btn btn-primary" th:href="@{/products/new-product}"> Crear Producto</a>
+    
     <h2>Productos</h2>
     <table class="table">
       <thead>
@@ -58,7 +59,7 @@
           <td th:text="${pro.quantity}"></td>
           <td th:text="${pro.price}"></td>
           <td><a class="btn btn-warning" th:href="@{/products/edit/{id} (id=${pro.id})}">Editar</a> </td>
-          <td><a class="btn btn-danger" href="">Eliminar</a> </td>
+          <td><a class="btn btn-danger" th:href="@{/products/delete/{id} (id=${pro.id})}">Eliminar</a> </td>
         </tr>
       </tbody>
     </table>
